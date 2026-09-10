@@ -32,33 +32,23 @@ runtime by orders of magnitude, and that the effect survives Kelley's oriented
 restarts. That robustness check held the restart scheme fixed, so the
 interaction was never quantified. We cross seven initialization procedures with
 six restart triggers and two restart constructions on the COCO/BBOB noiseless
-suite at $n\in\{2,5,10,20\}$ ($43\,050$ runs). Restarts largely substitute for
-initialization: the spread in initializer mean rank falls from $2.68$ under a
-single descent to $0.89$--$1.24$ once a trigger is enabled, and the MATLAB
-\texttt{fminsearch} initializer---worst of seven under a single descent---becomes
-unremarkable. The substitution erodes with dimension, the spread under a working
-trigger rising from $0.34$ at $n=2$ to $2.26$ at $n=20$. Turning to the trigger
-itself, we find the choice is strongly dimension-dependent, and the two
-published detectors sit at opposite ends of that dependence. The
-simplex-degeneracy test of \citet{luersen2004} degrades monotonically---from
-$74.5\%$ of problems solved at $n=2$ to $4.2\%$ at $n=20$, against $11.4\%$ for
-not restarting at all---while accounting for a rising share of all firings,
-$60.7\%$ at $n=2$ to $100\%$ at $n=20$, and thrashing at $463$ restarts per run.
-A sweep of its two tolerances over $40$ orders of magnitude shows the second of
-these is a mis-setting rather than a property of the criterion---retuning cuts
-the restart rate at $n=20$ from $442$ to $13$---but that no setting makes the
-criterion better than a plain simplex-size test at any dimension, and that its
-edge-ratio tolerance is inert in $11$ of the $12$ cells tested.
-The sufficient-decrease test of \citet{kelley1999} moves the other way, from
-$5.5$ points \emph{below} the no-restart baseline at $n=2$ to $15.0$ points above
-it at $n=20$: it is the only trigger whose advantage grows with dimension
-(Cochran--Armitage $p=9.1\times10^{-6}$, though the point comparison at $n=20$
-alone does not survive correction for multiplicity). Two
-trivial triggers---restart when the simplex is small, or when its vertex values
-are flat---are the most reliable across the range. Conditioning, the obvious
-mechanism, does not mediate any of this ($\rho\approx-0.05$), and the unshifted
-analytic functions still standard in this literature reverse the substitution
-result entirely.
+suite at $n\in\{2,5,10,20\}$ ($43\,050$ runs).
+
+Restarts largely substitute for initialization: the spread in initializer mean
+rank falls from $2.68$ under a single descent to $0.89$--$1.24$ once a trigger is
+enabled, and the MATLAB \texttt{fminsearch} initializer---worst of seven on its
+own---becomes unremarkable. The substitution erodes with dimension.
+
+Which trigger to use, however, depends strongly on $n$, and the two published
+detectors sit at opposite ends of that dependence. The simplex-degeneracy test of
+\citet{luersen2004} degrades monotonically, from $74.5\%$ of problems solved at
+$n=2$ to $4.2\%$ at $n=20$ against $11.4\%$ for not restarting at all; a sweep of
+its tolerances over $40$ orders of magnitude shows this to be a mis-setting
+rather than a property of the criterion, but also that no setting makes it better
+than a plain simplex-size test. The sufficient-decrease test of \citet{kelley1999}
+moves the other way, and is the only trigger whose advantage grows with
+dimension. Two trivial triggers---restart when the simplex is small, or when its
+vertex values are flat---are the most reliable across the range.
 \end{abstract}
 
 \noindent\textbf{Keywords:} Nelder--Mead $\cdot$ direct search $\cdot$ simplex
