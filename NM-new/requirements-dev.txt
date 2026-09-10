@@ -1,0 +1,23 @@
+# Development dependencies
+-r requirements.txt
+
+# Testing
+pytest>=6.0.0
+pytest-cov>=2.10.0
+hypothesis>=6.0.0
+
+# Code quality
+black>=21.0
+flake8>=3.9.0
+pylint>=2.10.0
+
+# Plotting (optional)
+matplotlib>=3.3.0
+
+# Documentation (optional)
+sphinx>=4.0.0
+sphinx-rtd-theme>=0.5.0
+
+# Benchmark suites
+scikit-fem>=8.0.0   # finite element black-box problem
+cmaes>=0.10.0       # CMA-ES baseline

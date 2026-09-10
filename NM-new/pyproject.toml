@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nelder-mead-optimization"
+version = "1.0.0"
+description = "A comprehensive implementation of Nelder-Mead optimization algorithms with constraint handling"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Marco Mollinetti", email = "marco.mollinetti@gmail.com"}
+]
+keywords = ["optimization", "nelder-mead", "simplex", "constrained-optimization", "metaheuristics"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.3.0",
+]
+
+[project.optional-dependencies]
+benchmarks = [
+    "scikit-fem>=8.0.0",
+    "cmaes>=0.10.0",
+]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.10.0",
+    "black>=21.0",
+    "flake8>=3.9.0",
+    "hypothesis>=6.0.0",
+]
+plotting = [
+    "matplotlib>=3.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mollinetti/nelder-mead-optimization"
+Documentation = "https://github.com/mollinetti/nelder-mead-optimization/tree/main/docs"
+Repository = "https://github.com/mollinetti/nelder-mead-optimization"
+"Bug Tracker" = "https://github.com/mollinetti/nelder-mead-optimization/issues"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src/nelder_mead --cov-report=html --cov-report=term"
+
+[tool.coverage.run]
+source = ["src/nelder_mead"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
