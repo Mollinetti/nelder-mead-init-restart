@@ -158,10 +158,10 @@ analytic control already supports the claim.
 - ✅ **Table width.** `tab:spread` was 13 columns and would have overflowed
   `\textwidth` at 11pt; split into two stacked blocks. All tabulars are now ≤10
   columns.
-- ✅ **Repository URL** set to https://github.com/Mollinetti/NMs/tree/GBNM.
-- ⚠️ **That repo is PRIVATE.** A reproducibility URL referees cannot open is
-  worse than none. Make it public, or split this branch into a public repo,
-  before submission.
+- ✅ **Repository URL** set to https://github.com/Mollinetti/nelder-mead-init-restart.
+- ✅ **Public.** Split into a standalone public repo; `PUBLICATION-PLAN.md` is
+  deliberately not included there. The private `NMs` GBNM branch remains as the
+  working record.
 - ⏸️ **Zenodo DOI** deliberately skipped: nothing is published yet.
 - ❌ **Affiliation** still a placeholder; note the CAPES agreement requires the
   *corresponding* author to hold a participating Brazilian affiliation at
