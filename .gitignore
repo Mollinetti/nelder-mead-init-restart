@@ -6,3 +6,10 @@ htmlcov/
 *.egg-info/
 benchmarks/mopta08/*.bin
 benchmarks/results/bbob_factorial_merged.json
+
+# LaTeX build products
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
